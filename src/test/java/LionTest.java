@@ -26,4 +26,13 @@ public class LionTest {
         Lion lion = new Lion("Самка", feline);
         Assert.assertEquals(List.of("Животные", "Птицы", "Рыба"), lion.getFood());
     }
+
+    @Test
+    public void getException() throws Exception {
+        try {
+            Lion lion = new Lion("Exception", feline);
+        } catch (Exception e) {
+            Assert.assertEquals("Используйте допустимые значения пола животного - самей или самка", e.getMessage());
+        }
+    }
 }

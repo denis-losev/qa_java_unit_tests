@@ -19,19 +19,13 @@ public class ManeParamsTest {
     public static Object[][] getTestValues() {
         return new Object[][] {
                 { "Самец", true},
-                { "Самка", false},
-                { "Exception", false}
+                { "Самка", false}
         };
     }
 
     @Test
-    public void maneTest() {
-        try {
-
+    public void maneTest() throws Exception {
             Lion lion = new Lion(sex, feline);
             Assert.assertEquals(mane, lion.doesHaveMane());
-        } catch (Exception e) {
-            Assert.assertEquals("Используйте допустимые значения пола животного - самей или самка", e.getMessage());
-        }
     }
 }
